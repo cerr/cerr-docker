@@ -15,7 +15,7 @@ To run: `docker run -it msk-mind-cerr:python`
 ### CUDA-enabled container for DL segmentation
 To acquire the DL model files used in this demo, please contact: [apte@mskcc.org](mailto:apte@mskcc.org)
 
-To build: `docker build --file docker_cudnn --tag msk-mind-cerr:cudnn`
+To build: `docker build --file docker_cudnn --tag cerr-octave:cudnn`
 
 To run Octave script segmentation demo: `docker run --rm -v $pwd/data:scratch cerr-octave:cudnn octave /ana/demo_runSegForPlanC.m`
 
