@@ -17,4 +17,4 @@ To run Octave script segmentation demo: `docker run --rm -v $pwd/data:scratch ms
 
 To run oct2py-based segmentation demo: `docker run --rm -v $pwd/data:/scratch msk-mind-cerr:cudnn python /ana/run_dlseg.py`
 
-Run Octave CLI interactively from container: `docker run --rm -v $pwd/data:/scratch msk-mind-cerr:cudnn octave`
+Run Octave CLI interactively from container: `docker run -it --rm -v $pwd/data:/scratch msk-mind-cerr:cudnn octave`
