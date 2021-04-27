@@ -2,8 +2,8 @@
 
 ## Run the CERR implementation with optional oct2py bridge in a docker container
 
-Idea: A few lines of python code invoke a matlab function (`radiomic_and_dosimetric_feature_extraction`), where the sampleData is pushed
-into the octave instance prior to running, or in a local folder bind-mounted to container.
+Idea: A few lines of python code invoke matlab/octave functions (`radiomic_and_dosimetric_feature_extraction`, `demo_runSegForPlanC`), where the sampleData is pushed
+into the octave instance prior to running, or contained in a local folder bind-mounted to container.
 
 Scripts exist at /ana/ within the container.
 
