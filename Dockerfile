@@ -12,8 +12,6 @@ RUN unzip octavecolab.zip -d octavecolab && tar xzvf "octavecolab/octave-colab-6
 
 RUN export OCTAVE_EXECUTABLE=./octavecolab/bin/octave-cli && export PATH=./octavecolab/bin/:$PATH
 
-RUN apt-get --yes install octave liboctave-dev
-
 RUN wget https://nchc.dl.sourceforge.net/project/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases/image-2.12.0.tar.gz && \
     wget https://nchc.dl.sourceforge.net/project/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases/io-2.6.1.tar.gz  && \
     wget https://nchc.dl.sourceforge.net/project/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases/statistics-1.4.2.tar.gz 
