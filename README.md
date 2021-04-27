@@ -13,8 +13,8 @@ To run: `docker run -it msk-mind-cerr:python`
 ### CUDA-enabled container for DL segmentation
 To build: `docker build --file docker_cudnn --tag msk-mind-cerr:cudnn`
 
-To run Octave script segmentation demo: `docker run --rm -v `pwd`/data:scratch msk-mind-cerr:cudnn octave /ana/demo_runSegForPlanC.m`
+To run Octave script segmentation demo: `docker run --rm -v $pwd/data:scratch msk-mind-cerr:cudnn octave /ana/demo_runSegForPlanC.m`
 
-To run oct2py-based segmentation demo: `docker run --rm -v `pwd`/data:/scratch msk-mind-cerr:cudnn python /ana/run_dlseg.py`
+To run oct2py-based segmentation demo: `docker run --rm -v $pwd/data:/scratch msk-mind-cerr:cudnn python /ana/run_dlseg.py`
 
-Run Octave CLI interactively from container: `docker run --rm -v `pwd`/data:/scratch msk-mind-cerr:cudnn octave`
+Run Octave CLI interactively from container: `docker run --rm -v $pwd/data:/scratch msk-mind-cerr:cudnn octave`
