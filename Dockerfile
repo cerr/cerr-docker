@@ -6,9 +6,7 @@ RUN pip3 install oct2py
 
 RUN apt-get install curl
 RUN LOCATION=$(curl -s https://api.github.com/repos/cerr/octave-colab/releases/latest \
-| grep "tag_name" \
-| awk '{print "https://github.com/cerr/octave-colab/archive/" substr($2, 2, length($2)-3) ".zip"}') \
-; curl -L -o octavecolab.zip $LOCATION
+| awk -F\" '/browser_download_url/ { print $4 }') && curl -L -o octavecolab.tar.gz $LOCATION
  
 RUN unzip octavecolab.zip -d octavecolab && tar xzvf "octavecolab/octave-colab-6.2/octavecolab.tar.gz"
 
