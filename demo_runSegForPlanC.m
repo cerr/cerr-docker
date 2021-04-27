@@ -6,6 +6,10 @@ pkg load statistics
 
 addpath(genpath('/content/CERR'));
 
+if ~exist('/scratch/output','dir')
+    mkdir('/scratch/output');
+end
+
 planCFile = ls('/scratch/*.mat');
 planC = loadPlanC(planCFile);
 
@@ -18,4 +22,4 @@ batchSize = 1;
 planC = runSegForPlanCInCondaEnv(planC,sessionPath,algorithm,...
     condaEnvList,wrapperFunctionList,batchSize);
 
-save_planC(planC,[],'PASSED','/scratch/planC_out.mat');
+save_planC(planC,[],'PASSED','/scratch/output/planC_out.mat');
