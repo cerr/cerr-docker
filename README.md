@@ -7,16 +7,18 @@ into the octave instance prior to running, or in a local folder bind-mounted to 
 
 Scripts exist at /ana/ within the container.
 
-### Python-based container (no CUDA support)
+### Python-based container (no CUDA support) for radiomics analysis
 To build: `docker build . --tag msk-mind-cerr:python`
 
 To run: `docker run -it msk-mind-cerr:python`
 
 ### CUDA-enabled container for DL segmentation
+To acquire the DL model files used in this demo, please contact: [apte@mskcc.org](mailto:apte@mskcc.org)
+
 To build: `docker build --file docker_cudnn --tag msk-mind-cerr:cudnn`
 
-To run Octave script segmentation demo: `docker run --rm -v $pwd/data:scratch msk-mind-cerr:cudnn octave /ana/demo_runSegForPlanC.m`
+To run Octave script segmentation demo: `docker run --rm -v $pwd/data:scratch cerr-octave:cudnn octave /ana/demo_runSegForPlanC.m`
 
-To run oct2py-based segmentation demo: `docker run --rm -v $pwd/data:/scratch msk-mind-cerr:cudnn python /ana/run_dlseg.py`
+To run oct2py-based segmentation demo: `docker run --rm -v $pwd/data:/scratch cerr-octave:cudnn python /ana/run_dlseg.py`
 
-Run Octave CLI interactively from container: `docker run -it --rm -v $pwd/data:/scratch msk-mind-cerr:cudnn octave`
+Run Octave CLI interactively from container: `docker run -it --rm -v $pwd/data:/scratch cerr-octave:cudnn octave`
